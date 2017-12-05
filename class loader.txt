@@ -1,0 +1,41 @@
+What is java class loading?
+
+*The java classloader is a part of the java runtime enviroment
+*It will load the java class file into the JVM during the rumtime dynamically
+*When we compile a java class it transforms it in the form of bytecode that is platform and machine independent compiled program and stores it as a class file
+*After that when we try to use a class java classLoader loads that class in to memory
+*It is imported using java.lang.ClassLoader package
+
+
+Buliding a SimpleClassLoader
+
+A class loader starts by being a subclass of java.lang.ClassLoader. The only abstract method that must be implemented is loadClass(). The flow of loadClass() is as follows:
+
+.Verify class name.
+.Check to see if the class requested has already been loaded.
+.Check to see if the class is a "system" class.
+.Attempt to fetch the class from this class loader's repository.
+.Define the class for the VM.
+.Resolve the class.
+.Return the class to the caller. 
+
+Types of ClassLoaders?
+*There are three types of ClassLoaders
+1. Bootstrap class loader
+
+2. Extensions class loader
+
+3. System class loader
+
+   Bootstrap class loader :is responsible for loading key Java classes like       java.lang.Object and other runtime code into memory firstIt loads JDK internal      classes, typically loads rt.jar and other core classes for example       java.lang.*package classes
+
+   Extensions class loader : it is the child of bootstrap of class loader. Its      responsible is to loads classes from the JDK extensions directory     JAVA_HOME/lib/ext directory
+                          
+   System class loader :loads the classes from the system class path, which are set by the CLASSPATH environment variable.
+
+
+
+
+
+
+
